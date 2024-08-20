@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #1c1c1e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Headings */
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #bb86fc;
+            text-shadow: 0 0 10px rgba(147, 87, 221, 0.8);
+        }
+
+        /* Form and Table Styling */
+        form,
+        table {
+            width: 100%;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        /* Input Fields */
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            background-color: #2c2c2e;
+            border: 1px solid #3a3a3c;
+            border-radius: 5px;
+            color: #f5f5f7;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            background-color: #444;
+            box-shadow: 0 0 8px rgba(187, 134, 252, 0.8);
+            outline: none;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="number"]::placeholder {
+            color: #a0a0a0;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        label {
+            margin-right: 20px;
+        }
+
+        /* Buttons */
+        button {
+            background-color: #bb86fc;
+            color: #121212;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #9f6dfc;
+            box-shadow: 0 0 10px rgba(187, 134, 252, 0.8);
+        }
+
+        /* Table Styling */
+        #data th,
+        #data td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        #data th {
+            background-color: #2c2c2e;
+            color: #bb86fc;
+            border-bottom: 2px solid #444;
+        }
+
+        #data tr:nth-child(even) {
+            background-color: #1e1e1f;
+        }
+
+        #data tr:nth-child(odd) {
+            background-color: #2a2a2b;
+        }
+
+        /* Remove Button with Trash Icon */
+        .remove-icon {
+            cursor: pointer;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .remove-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .remove-icon img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .remove-icon:hover .lid {
+            transform: rotate(-30deg);
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            td {
+                display: block;
+                width: 100%;
+            }
+
+            td:first-child {
+                margin-top: 10px;
+            }
+
+            input[type="radio"],
+            label {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>STUDENT FORM</h1>
+        <form class="data">
+            <table>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" placeholder="Enter your name" id="name" /></td>
+                </tr>
+                <tr>
+                    <td><label for="age">Age:</label></td>
+                    <td><input type="number" placeholder="Enter your age" id="age" /></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td id="gender">
+                        <label><input type="radio" name="gender" value="Male"> Male</label>
+                        <label><input type="radio" name="gender" value="Female"> Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="course">Course:</label></td>
+                    <td>
+                        <select id="course">
+                            <option value="" disabled selected>Select your course</option>
+                            <option>Web Developer</option>
+                            <option>Cloud Computing</option>
+                            <option>Cybersecurity</option>
+                            <option>Software Development</option>
+                            <option>Data Science</option>
+                            <option>Artificial Intelligence</option>
+                            <option>Machine Learning</option>
+                            <option>Mobile App Development</option>
+                            <option>DevOps Engineering</option>
+                            <option>UI/UX Design</option>
+                            <option>Blockchain Technology</option>
+                            <option>Internet of Things (IoT)</option>
+                            <option>Game Development</option>
+                            <option>Database Administration</option>
+                            <option>IT Project Management</option>
+                            <option>Network Security</option>
+                            <option>Business Analytics</option>
+                            <option>Virtual Reality (VR) Development</option>
+                            <option>Augmented Reality (AR) Development</option>
+                            <option>Robotics Engineering</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="text" placeholder="Enter your email" id="email" /></td>
+                </tr>
+            </table>
+            <div style="text-align: center;">
+                <button type="button" onclick="add()">Submit</button>
+                <br><br>
+            </div>
+        </form>
+        <table id="data">
+            <tr>
+                <th>S.No</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>GENDER</th>
+                <th>COURSE</th>
+                <th>EMAIL</th>
+                <th>ACTION</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        let counter = 1;
+
+        function add() {
+            var name = document.getElementById("name").value.trim();
+            var age = document.getElementById("age").value.trim();
+            var gender = document.querySelector('input[name="gender"]:checked') ? document.querySelector('input[name="gender"]:checked').value : '';
+            var course = document.getElementById("course").value;
+            var email = document.getElementById("email").value.trim();
+
+            if (!name || !age || !gender || !course || !email) {
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            var data = document.getElementById("data");
+            var tr = document.createElement("tr");
+            tr.innerHTML = `<td>${counter++}</td>` +
+                           "<td>" + name + "</td>" +
+                           "<td>" + age + "</td>" +
+                           "<td>" + gender + "</td>" +
+                           "<td>" + course + "</td>" +
+                           "<td>" + email + "</td>" +
+                           `<td><div class="remove-icon" onclick="del(event)">
+                                <img src="https://cdn-icons-png.flaticon.com/512/61/61848.png" alt="Trash Icon">
+                            </div></td>`;
+            data.appendChild(tr);
+
+            document.getElementById("name").value = '';
+            document.getElementById("age").value = '';
+            document.querySelectorAll('input[name="gender"]').forEach(el => el.checked = false);
+            document.getElementById("course").selectedIndex = 0;
+            document.getElementById("email").value = '';
+        }
+
+        function del(event) {
+            event.target.closest('tr').remove();
+            counter--;
+            updateSerialNumbers();
+        }
+
+        function updateSerialNumbers() {
+            const rows = document.querySelectorAll('#data tr');
+            for (let i = 1; i < rows.length; i++) {
+                rows[i].cells[0].innerText = i;
+            }
+        }
+    </script>
+</body>
+</html>
